@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Portfolio | LINHAI RESIN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* 侧边栏固定效果 */
+        .sidebar-sticky {
+            position: sticky;
+            top: 100px;
+            height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+        .category-link {
+            display: block;
+            padding: 12px 15px;
+            color: var(--text-black);
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .category-link:hover, .category-link.active {
+            background: rgba(217, 33, 33, 0.05);
+            border-left-color: var(--primary-red);
+            color: var(--primary-red);
+        }
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary-blue);
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-molecule">
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="https://placehold.co/60x60/D92121/FFF?text=LR" alt="Logo" width="50">
+                <span class="ms-2 fw-black" style="font-family: 'Arial Black';">LINHAI RESIN</span>
+            </a>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5 bg-light border-bottom" style="margin-top: 80px;">
+        <div class="container">
+            <h1 class="section-title">Product Portfolio</h1>
+            <p class="text-muted">Over 200+ specialized resins for diverse industrial applications.</p>
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <div class="row">
+            <aside class="col-lg-3 mb-4">
+                <div class="sidebar-sticky">
+                    <h6 class="fw-bold text-uppercase mb-3 px-3">Categories</h6>
+                    <nav class="nav flex-column border-end">
+                        <a href="#" class="category-link active">All Products</a>
+                        <a href="#" class="category-link">Strong Acid Cation</a>
+                        <a href="#" class="category-link">Strong Base Anion</a>
+                        <a href="#" class="category-link">Weak Acid/Base</a>
+                        <a href="#" class="category-link">Macroporous Adsorption</a>
+                        <a href="#" class="category-link">Chelating Resins</a>
+                        <a href="#" class="category-link">Mixed Bed Resins</a>
+                        <a href="#" class="category-link">Nuclear Grade</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <main class="col-lg-9">
+                <div class="row g-4" id="product-list">
+                    <div class="col-md-6 col-xl-4 product-item" data-category="cation">
+                        <div class="card h-100 linhai-card border-0 shadow-sm position-relative">
+                            <span class="product-badge">LH-007</span>
+                            <img src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Resin">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-2">Standard Softening Resin</h5>
+                                <p class="text-muted small mb-3">High capacity gel-type strong acid cation resin for water softening.</p>
+                                <a href="product-detail.html" class="btn btn-outline-danger btn-sm rounded-0 w-100">TECHNICAL DATA</a>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        const container = document.getElementById('product-list');
+                        const types = ["Macroporous", "Chelating", "Anion", "Specialty"];
+                        for(let i=2; i<=16; i++) {
+                            const type = types[i % types.length];
+                            container.innerHTML += `
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card h-100 linhai-card border-0 shadow-sm position-relative">
+                                    <span class="product-badge">LH-${800+i}X</span>
+                                    <img src="https://placehold.co/400x300/F8F9FA/1A365D?text=Resin+Type+${type}" class="card-img-top" alt="Product">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-2">${type} Series Resin</h5>
+                                        <p class="text-muted small mb-3">Specialized solution for ${type.toLowerCase()} applications in chemical processing.</p>
+                                        <a href="product-detail.html" class="btn btn-outline-danger btn-sm rounded-0 w-100">LEARN MORE</a>
+                                    </div>
+                                </div>
+                            </div>`;
+                        }
+                    </script>
+                </div>
+
+                <nav class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link rounded-0" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link rounded-0" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link rounded-0" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link rounded-0" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </main>
+        </div>
+    </div>
+
+    <footer class="footer-custom mt-5">...</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
