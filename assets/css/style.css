@@ -1,0 +1,146 @@
+/* =========================================
+   LINHAI RESIN - Core Stylesheet
+   Theme: Industrial Chemical & Precision
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700;900&display=swap');
+
+:root {
+    --primary-red: #D92121;
+    --primary-blue: #1A365D;
+    --pure-white: #FFFFFF;
+    --text-black: #111111;
+    --bg-light: #F8F9FA;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-black);
+    padding-top: 80px; /* Offset for fixed navbar */
+    background-color: var(--pure-white);
+}
+
+/* 分子暗纹背景 */
+.bg-molecule {
+    background-color: var(--pure-white);
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.923' viewBox='0 0 60 103.923' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.923L0 86.603V51.962L30 34.641l30 17.321v34.64l-30 17.321zm0-3.464l27-15.588v-31.177L30 38.105 3 53.694v31.177l27 15.588z' fill='%231A365D' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* 导航栏定制 */
+.navbar-custom {
+    background-color: var(--pure-white);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+.navbar-custom .nav-link {
+    color: var(--text-black);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.1rem; /* 比基础大2级 */
+    margin: 0 10px;
+    position: relative;
+}
+.navbar-custom .nav-link:hover { color: var(--primary-red); }
+
+/* 按钮规范 */
+.btn-linhai-primary {
+    background-color: var(--primary-red);
+    color: var(--pure-white);
+    border: 2px solid var(--primary-red);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+    border-radius: 0; /* 工业感直角 */
+}
+.btn-linhai-primary:hover {
+    background-color: transparent;
+    color: var(--primary-red);
+}
+
+.btn-linhai-outline {
+    background-color: transparent;
+    color: var(--pure-white);
+    border: 2px solid var(--pure-white);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+    border-radius: 0;
+}
+.btn-linhai-outline:hover {
+    background-color: var(--pure-white);
+    color: var(--primary-blue);
+}
+
+/* 标题规范 (带红色下划线) */
+.section-title {
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-red);
+}
+
+/* 产品与数据卡片 */
+.linhai-card {
+    background: var(--pure-white);
+    border: 1px solid #E5E5E5;
+    transition: all 0.4s ease;
+    height: 100%;
+}
+.linhai-card:hover {
+    border-color: var(--primary-red);
+    box-shadow: 0 15px 30px rgba(217, 33, 33, 0.1);
+    transform: translateY(-5px);
+}
+
+/* 3D 模型容器 */
+#molecule-canvas {
+    width: 100%;
+    height: 400px;
+    background: var(--bg-light);
+    border: 1px solid #E5E5E5;
+    cursor: grab;
+}
+#molecule-canvas:active { cursor: grabbing; }
+
+/* 页脚 */
+.footer-custom {
+    background-color: var(--pure-white);
+    border-top: 4px solid var(--primary-red);
+    color: var(--text-black);
+    padding: 60px 0 20px;
+}
+.footer-custom a { color: var(--text-black); text-decoration: none; transition: color 0.3s; }
+.footer-custom a:hover { color: var(--primary-red); }
+
+/* 悬浮客服按钮 */
+.floating-chat {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-blue);
+    color: var(--pure-white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s;
+}
+.floating-chat:hover { background-color: var(--primary-red); transform: scale(1.1); }
